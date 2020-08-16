@@ -22,7 +22,8 @@
     $repas = [];
 
     // Génération des repas
-    for ($i = 1; $i <= $nombreRepas; $i++) {
+    for ($i = 1; $i <= $nombreRepas; $i++)
+    {
       // Nettoyage des variables
       $alimentsBase = null;
       $alimentsAccompagnement = null;
@@ -56,9 +57,11 @@
       }
 
       // Enregistrement de la composition du repas --> Accompagnement
-      if ($nombreAlimentsAssaisonnement === 1) {
+      if ($nombreAlimentsAssaisonnement === 1)
+      {
         $repasString = $repasString . "</ul>Accompagnement :<br /><ul>";
-      } else {
+      } else
+      {
         $repasString = $repasString . "</ul>Accompagnements :<br /><ul>";
       }
       while ($alimentAccompagnement = $alimentsAccompagnement->fetch())
@@ -67,9 +70,11 @@
       }
 
       // Enregistrement de la composition du repas --> Assaisonnement
-      if ($nombreAlimentsAssaisonnement === 1) {
+      if ($nombreAlimentsAssaisonnement === 1)
+      {
         $repasString = $repasString . "</ul>Assaisonnement :<br /><ul>";
-      } else {
+      } else
+      {
         $repasString = $repasString . "</ul>Assaisonnements :<br /><ul>";
       }
 
@@ -79,9 +84,11 @@
       }
 
       // Enregistrement de la composition du repas --> Sauce
-      if ($nombreSauces === 1) {
+      if ($nombreSauces === 1)
+      {
         $repasString = $repasString . "</ul>Sauce :<br /><ul>";
-      } else {
+      } else
+      {
         $repasString = $repasString . "</ul>Sauces :<br /><ul>";
       }
 
@@ -98,7 +105,8 @@
 
   // Génération de 7 repas "salade", avec 1 aliment en base, 2 aliments en accompagnement, 3 aliments en assaisonnement et 1 sauce
   $repasSemaine = generateSalads(7, 1, 2, 3, 1);
-  foreach ($repasSemaine as $repas) {
+  foreach ($repasSemaine as $repas)
+  {
     echo $repas;
   }
 ?>
