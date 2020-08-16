@@ -33,19 +33,19 @@
       $repasString = "<strong>Repas " . $i . " :</strong><br />";
 
       // Récupération de la base
-      $requeteAlimentsBase = 'SELECT aliments.nom FROM aliments INNER JOIN proprietealiment ON aliments.id = proprietealiment.aliment INNER JOIN proprietesaliments ON proprietealiment.propriete = proprietesaliments.id WHERE proprietesaliments.id = 1 ORDER BY RAND() LIMIT ' . $nombreAlimentsBase;
+      $requeteAlimentsBase = 'SELECT aliments.nom FROM aliments INNER JOIN proprietealiment ON aliments.id = proprietealiment.aliment INNER JOIN proprietes ON proprietealiment.propriete = proprietes.id WHERE proprietes.id = 1 ORDER BY RAND() LIMIT ' . $nombreAlimentsBase;
       $alimentsBase = $bdd->query($requeteAlimentsBase);
 
       // Récupération de l'accompagnement
-      $requeteAlimentsAccompagnement = 'SELECT aliments.nom FROM aliments INNER JOIN proprietealiment ON aliments.id = proprietealiment.aliment INNER JOIN proprietesaliments ON proprietealiment.propriete = proprietesaliments.id WHERE proprietesaliments.id = 2 ORDER BY RAND() LIMIT ' . $nombreAlimentsAccompagnement;
+      $requeteAlimentsAccompagnement = 'SELECT aliments.nom FROM aliments INNER JOIN proprietealiment ON aliments.id = proprietealiment.aliment INNER JOIN proprietes ON proprietealiment.propriete = proprietes.id WHERE proprietes.id = 2 ORDER BY RAND() LIMIT ' . $nombreAlimentsAccompagnement;
       $alimentsAccompagnement = $bdd->query($requeteAlimentsAccompagnement);
 
       // Récupération de l'assaisonnement
-      $requeteAlimentsAssaisonnement = 'SELECT aliments.nom FROM aliments INNER JOIN proprietealiment ON aliments.id = proprietealiment.aliment INNER JOIN proprietesaliments ON proprietealiment.propriete = proprietesaliments.id WHERE proprietesaliments.id = 3 ORDER BY RAND() LIMIT ' . $nombreAlimentsAssaisonnement;
+      $requeteAlimentsAssaisonnement = 'SELECT aliments.nom FROM aliments INNER JOIN proprietealiment ON aliments.id = proprietealiment.aliment INNER JOIN proprietes ON proprietealiment.propriete = proprietes.id WHERE proprietes.id = 3 ORDER BY RAND() LIMIT ' . $nombreAlimentsAssaisonnement;
       $alimentsAssaisonnement = $bdd->query($requeteAlimentsAssaisonnement);
 
       // Récupération des sauces
-      $requeteSauces = 'SELECT sauces.nom FROM sauces INNER JOIN proprietesauce ON sauces.id = proprietesauce.sauce INNER JOIN proprietesaliments ON proprietesauce.propriete = proprietesaliments.id WHERE proprietesaliments.id = 4 ORDER BY RAND() LIMIT ' . $nombreSauces;
+      $requeteSauces = 'SELECT sauces.nom FROM sauces INNER JOIN proprietesauce ON sauces.id = proprietesauce.sauce INNER JOIN proprietes ON proprietesauce.propriete = proprietes.id WHERE proprietes.id = 4 ORDER BY RAND() LIMIT ' . $nombreSauces;
       $sauces = $bdd->query($requeteSauces);
 
       // Enregistrement de la composition du repas --> Base
