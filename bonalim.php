@@ -46,7 +46,7 @@
       $alimentsAssaisonnement = $bdd->query($requeteAlimentsAssaisonnement);
 
       // Récupération des sauces
-      $requeteSauces = 'SELECT sauces.nom FROM sauces INNER JOIN proprietesauce ON sauces.id = proprietesauce.sauce INNER JOIN proprietes ON proprietesauce.propriete = proprietes.id WHERE proprietes.id = 4 ORDER BY RAND() LIMIT ' . $nombreSauces;
+      $requeteSauces = 'SELECT sauces.nom, sauces.recetteUrl FROM sauces INNER JOIN proprietesauce ON sauces.id = proprietesauce.sauce INNER JOIN proprietes ON proprietesauce.propriete = proprietes.id WHERE proprietes.id = 4 ORDER BY RAND() LIMIT ' . $nombreSauces;
       $sauces = $bdd->query($requeteSauces);
 
       // Enregistrement de la composition du repas --> Base
@@ -94,19 +94,17 @@
 
       while ($sauce = $sauces->fetch())
       {
-        $repasString = $repasString . "<li>" . $sauce['nom'] . "</li>";
+        if ($sauce['recetteUrl']) {
+          $repasString = $repasString . "<li><a href=\"" . $sauce['recetteUrl'] . "\" target=\"_blank\">" . $sauce['nom'] . "</a></li>";
+        } else
+        {
+          $repasString = $repasString . "<li>" . $sauce['nom'] . "</li>";
+        }
       }
       $repasString = $repasString . "</ul><br />";
 
       array_push($repas, $repasString);
     }
     return $repas;
-  }
-
-  // Génération de 7 repas "salade", avec 1 aliment en base, 2 aliments en accompagnement, 3 aliments en assaisonnement et 1 sauce
-  $repasSemaine = generateSalads(7, 1, 2, 3, 1);
-  foreach ($repasSemaine as $repas)
-  {
-    echo $repas;
   }
 ?>

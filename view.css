@@ -1,0 +1,46 @@
+*
+{
+  font-family: 'Nunito Sans';
+  margin: 0;
+  padding: 0;
+}
+
+.repas
+{
+  border: #21B271 10px solid;
+  border-radius: 24px;
+  width: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 74px;
+  padding-right: 74px;
+}
+
+.subtitle
+{
+  font-size: 20px;
+  color: #707070;
+  text-align: center;
+  width: 100%;
+}
+
+.title
+{
+  font-size: 40px;
+  color: #000000;
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.composition
+{
+  font-size: 20px;
+  color: #707070;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
