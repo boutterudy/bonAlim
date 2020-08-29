@@ -17,6 +17,9 @@ ___
   <img src="assets/web-demo.gif" alt="Web interface demo GIF, comming soon..." />
 </p>
 
+## 📝 To-do
+- [ ] Migrate to NodeJS
+
 ## ✨ Features
 
  - [x] Salad recipe generation
